@@ -1,6 +1,5 @@
-package pages;
+package pages.search;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.Getter;
@@ -12,16 +11,15 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 @Slf4j
 @Getter
-public class SearchResultsPage {
+public class BrandSearchResultsPage extends SearchPageBasic {
 
-    private ElementsCollection allProducts = $$(".block-tov");
+
     private SelenideElement viewAllButton = $(".nav-all");
 
-    public SearchResultsPage() {
+    public BrandSearchResultsPage() {
         if (viewAllButton.exists()) {
             viewAllButton.click();
         }
