@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.qameta.allure:allure-java-commons:2.13.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-java-commons/2.13.5/e17aa479202f3ec9e1b1cc293266858aff6f42eb/allure-java-commons-2.13.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-java-commons/2.13.5/f392935976e882eae38f53da31ce4918687a1602/allure-java-commons-2.13.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
