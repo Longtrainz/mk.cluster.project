@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 import static models.Brand.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SearchProductsTests extends BaseTest {
+class SearchProductsTests extends BaseTest {
 
 
     @Test

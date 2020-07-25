@@ -22,6 +22,7 @@ public class BaseTest {
     static void setUpAll() {
         Configuration.browser = "chrome";
         Configuration.timeout = 5000L;
+        Configuration.startMaximized = true;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }
