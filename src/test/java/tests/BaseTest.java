@@ -15,13 +15,14 @@ import static com.codeborne.selenide.Selenide.open;
 @ExtendWith(TextReportExtension.class)
 public class BaseTest {
 
-    public static final Faker FAKER = new Faker();
-    public static final SoftAssertions SA = new SoftAssertions();
+    static final Faker FAKER = new Faker();
+    static final SoftAssertions SA = new SoftAssertions();
 
     @BeforeAll
     static void setUpAll() {
-        Configuration.browser = "firefox";
+        Configuration.browser = "chrome";
         Configuration.timeout = 5000L;
+        Configuration.startMaximized = true;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import pages.search.BrandSearchResultsPage;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +17,7 @@ import java.util.stream.Stream;
 import static models.Brand.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MainPageTests extends BaseTest {
+class SearchProductsTests extends BaseTest {
 
 
     @Test
@@ -46,7 +47,11 @@ public class MainPageTests extends BaseTest {
     @DisplayName("Check that amount of products for specific brand is equals to expected")
     @Description("Check that amount of products for specific brand is equals to expected")
     void checkAmountOfProductsForEachBrand(Brand brand, int expectedSize) {
-        List<Product> listOfProductsFromPage = openMainPage().searchByBrand(brand).getListOfProductsFromPage();
+        BrandSearchResultsPage searchResultsPage = openMainPage().searchByBrand(brand);
+
+        assertThat(searchResultsPage.getPageHeader().getText()).isEqualToIgnoringCase(brand.getName());
+
+        List<Product> listOfProductsFromPage = searchResultsPage.getListOfProductsFromPage();
         assertThat(listOfProductsFromPage.size()).isEqualTo(expectedSize);
     }
 
@@ -56,7 +61,7 @@ public class MainPageTests extends BaseTest {
                 Arguments.of(AKAI,47),
                 Arguments.of(SONY,4),
                 Arguments.of(SEHNHEISER,151),
-                Arguments.of(AKG,46),
+                Arguments.of(AKG,63),
                 Arguments.of(PRODIPE,37),
                 Arguments.of(ARTURIA,46));
     }
