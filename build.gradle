@@ -50,6 +50,11 @@ test {
         showStandardStreams = true
     }
     ignoreFailures = true
+
+    //Lines below are needed to avoid failures in parallel test run for different classes.
+    systemProperties['junit.jupiter.execution.parallel.enabled'] = true
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    forkEvery = 1
 }
 
 allure {
