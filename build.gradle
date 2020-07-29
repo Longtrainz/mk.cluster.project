@@ -42,6 +42,9 @@ dependencies {
 
     //AssertJ
     testImplementation "org.assertj:assertj-core:$assertJVersion"
+
+    //OwnerAPI
+    implementation "org.aeonbits.owner:owner-java8:1.0.6"
 }
 
 test {
@@ -50,6 +53,8 @@ test {
         showStandardStreams = true
     }
     ignoreFailures = true
+
+    systemProperties System.getProperties()
 
     //Lines below are needed to avoid failures in parallel test run for different classes.
     systemProperties['junit.jupiter.execution.parallel.enabled'] = true
